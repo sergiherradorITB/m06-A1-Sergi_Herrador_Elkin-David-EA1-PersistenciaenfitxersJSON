@@ -89,7 +89,7 @@ fun exercici4() {
             productList.add(product)
         } catch (e: Exception) {
             println("Error decoding JSON line: $line")
-            e.printStackTrace()
+            // e.printStackTrace()
         }
     }
 
