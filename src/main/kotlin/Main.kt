@@ -108,7 +108,7 @@ fun exercici4() {
 }
 
 
-fun exercici5() {
+fun exercici5(): List<ProducteEx2> {
     // Leer el archivo products2.json
     val lines = File("/home/sergi.herrador.7e7/Baixades/products2.json").readLines()
     val newProducts = mutableListOf<ProducteEx2>()
@@ -118,6 +118,12 @@ fun exercici5() {
         val product = Json.decodeFromString<ProducteEx2>(line)
         newProducts.add(product)
     }
+    return newProducts
+}
+
+
+fun exercici6() {
+    val products = mutableListOf<ProducteEx2>()
 
     // Crear cinco nuevos productos y agregarlos a la lista de productos
     for (i in 1..5) {
@@ -128,12 +134,12 @@ fun exercici5() {
             "nuevo_producto$i.jpg",
             listOf(Category(18, "nueva_categoria9"), Category(19, "nueva_categoria10"))
         )
-        newProducts.add(newProduct)
+        products.add(newProduct)
     }
 
     // Convertir la lista de nuevos productos a JSON
     val newProductsJsonList = mutableListOf<String>()
-    for (product in newProducts) {
+    for (product in products) {
         newProductsJsonList.add(Json.encodeToString(product))
     }
 
@@ -142,18 +148,25 @@ fun exercici5() {
     jsonFile.writeText(newProductsJsonList.joinToString("\n"))
 }
 
-
 fun main() {
     // Execucío exercici2
-    // var resultat = exercici2()
-    /*for (linea in resultat) {
+    // var resultat2 = exercici2()
+    /*for (linea in resultat2) {
         println(linea)
     }*/
 
     // Execució exercici3
     // exercici3()
 
-    // exercici5()
-    println("¡¡¡ EXERCICI 4 !!!")
-    exercici4()
+    // Execucío exercici4
+    // exercici4()
+
+    // Execucío exercici5
+    // var resultat5 = exercici5()
+    /*for (linea in resultat5) {
+        println(linea)
+    }*/
+
+    // Execucío exercici6
+    // exercici6()
 }
