@@ -47,11 +47,6 @@ fun exercici2() {
 fun exercici3() {
     // Leer productos existentes desde el archivo
     val existingProducts = mutableListOf<Producte>()
-    val lines = File("/home/sergi.herrador.7e7/Baixades/products1.json").readLines()
-    for (line in lines) {
-        val item = Json.decodeFromString<Producte>(line)
-        existingProducts.add(item) // los añado a una lista mia
-    }
 
     // Crear cinco nuevos objetos Exercici1
     val newProduct1 = Producte("Producte 1", 100, 20, "product1.jpg", listOf("categoria1", "categoria2"))
