@@ -74,7 +74,7 @@ fun exercici3() {
 
     // Escribir los JSON en el archivo
     val jsonFile = File("/home/sergi.herrador.7e7/Baixades/products1.json")
-    jsonFile.writeText(jsonList.joinToString("\n")) // escric el text de la llista i per cada element el separo amb un breakline identificat com \n
+    jsonFile.appendText(jsonList.joinToString("\n")) // escric el text de la llista i per cada element el separo amb un breakline identificat com \n
 }
 
 fun exercici4() {
@@ -145,7 +145,7 @@ fun exercici6() {
 
     // Escribir los nuevos productos en el archivo products2.json
     val jsonFile = File("/home/sergi.herrador.7e7/Baixades/products2.json")
-    jsonFile.writeText(newProductsJsonList.joinToString("\n"))
+    jsonFile.appendText(newProductsJsonList.joinToString("\n"))
 }
 
 fun main() {
