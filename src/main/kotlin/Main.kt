@@ -33,10 +33,12 @@ data class Grade(
 fun exercici2(){
     // Leer el archivo JSON
     val jsonString = File("restaurants.json").readLines() // nos devuelve todas las lineas como string
-    val llista: MutableList<String> = mutableListOf()
 
-    jsonString.forEach {
-        llista.add(it)
+    val llista: MutableList<Restaurant> = mutableListOf()
+
+    jsonString.forEach { jsonLine ->
+        val restaurant = Json.decodeFromString<Restaurant>(jsonLine) // Lo deserializamos a restaurant
+        llista.add(restaurant) // añadimos a la lista de restaurants aquest objecte
     }
 
     // Escribir los objetos en el archivo binario
